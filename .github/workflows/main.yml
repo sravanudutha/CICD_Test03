@@ -13,11 +13,11 @@ jobs:
         
         # Activate unity
         - name: Activate Unity
-          run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile Assests/Unity_v2019.x.ulf || exit 0
+          run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile Unity_v2019.x.ulf || exit 0
         
         # Build Windows and OSX
         - name: Build APK
-          run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -noUpm -logFile -projectPath -Android /Sample.apk
+          run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -noUpm -logFile -projectPath -Android Assets/Sample.apk
         - uses: actions/upload-artifact@v2
           with:
            name: my-artifact
