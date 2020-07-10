@@ -17,11 +17,11 @@ jobs:
         
         # Build Windows and OSX
         - name: Build APK
-          run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -noUpm -logFile -projectPath . -Android projectPath/Sample.apk
+          run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -noUpm -logFile -projectPath . -Android .github/Sample.apk
         - uses: actions/upload-artifact@v2
           with:
            name: my-artifact
-           path: projectPath/Sample.apk 
+           path: .github/Sample.apk 
      #  - name: Build OSX Player
       #    run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -noUpm -logFile -projectPath . -buildOSXUniversalPlayer ./bin-osx/CISample.app      
         
