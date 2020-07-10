@@ -17,15 +17,19 @@ jobs:
         
         # Build Windows and OSX
         - name: Build APK
-          run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -noUpm -logFile -projectPath . -Android ./bin-win64/CISample.apk
-      #  - name: Build OSX Player
+          run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -noUpm -logFile -projectPath . -Android ./bin-win64/Sample.apk
+        - uses: actions/upload-artifact@v2
+          with:
+           name: my-artifact
+           path: projectPath/Sample.apk 
+     #  - name: Build OSX Player
       #    run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -noUpm -logFile -projectPath . -buildOSXUniversalPlayer ./bin-osx/CISample.app      
         
-        - name: Archive Windows Build
-          uses: actions/upload-artifact@v1
-          with:
-            name: CISampleWin64Binary
-            path: ./bin-win64
+       # - name: Archive Windows Build
+       #   uses: actions/upload-artifact@v1
+       #   with:
+       #     name: CISampleWin64Binary
+       #     path: ./bin-win64
 
        # - name: Archive Mac Build
        #   uses: actions/upload-artifact@v1
