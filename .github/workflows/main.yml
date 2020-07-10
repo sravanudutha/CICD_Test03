@@ -13,15 +13,15 @@ jobs:
         
         # Activate unity
         - name: Activate Unity
-          run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile .github/Unity_v2019.x.ulf || exit 0
+          run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -logFile -manualLicenseFile Assests/Unity_v2019.x.ulf || exit 0
         
         # Build Windows and OSX
         - name: Build APK
-          run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -noUpm -logFile -projectPath -Android .github/Sample.apk
+          run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -noUpm -logFile -projectPath -Android /Sample.apk
         - uses: actions/upload-artifact@v2
           with:
            name: my-artifact
-           path: .github/Sample.apk 
+           path: Assets/Sample.apk 
      #  - name: Build OSX Player
       #    run: /opt/Unity/Editor/Unity -quit -batchmode -nographics -silent-crashes -noUpm -logFile -projectPath . -buildOSXUniversalPlayer ./bin-osx/CISample.app      
         
